@@ -10,7 +10,7 @@ const EmpCreate = () => {
     const [active, activechange] = useState(true)
     const [validation, valchange] = useState(false)
 
-    const navigete = useNavigate();
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,7 +23,7 @@ const EmpCreate = () => {
         }).then((res)=>{
             alert("Save successfully")
             // console.log("결과?",res)
-            navigete("/")
+            navigate("/")
         }).catch((err)=>{
             console.log("실패",err.message)
         })
