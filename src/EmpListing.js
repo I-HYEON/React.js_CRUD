@@ -11,8 +11,17 @@ const EmpListing = () => {
     const LoadEdit = (empid) => {
         navigate('/employee/edit/'+empid)
     }
-    const DeleteFunction = () => {
-        return
+    const DeleteFunction = (empid) => {
+        if (window.confirm('Are you sure you want to delete?')){
+            fetch("http://localhost:8000/employee/"+empid,{
+                method: 'DELETE'
+            }).then((res)=>{
+            alert('Removed Successfully')
+            window.location.reload();
+        }).catch((err)=>{
+            console.log('실패다,,,',err.message)
+        })
+        }
     }
 
     useEffect(()=> {

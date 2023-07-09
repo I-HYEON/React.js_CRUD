@@ -12,13 +12,6 @@
       "phone": "123456789",
       "active": true,
       "id": 2
-    },
-    {
-      "name": "nana",
-      "email": "nana@nana.com",
-      "phone": "124578895623",
-      "active": true,
-      "id": 3
     }
   ]
 }
