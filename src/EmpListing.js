@@ -7,7 +7,7 @@ const EmpListing = () => {
         fetch("http://localhost:8000/employee").then((res)=>{
             return res.json();
         }).then((res)=>{
-            console.log(res)
+            // console.log(res)
             setEmpData(res)
         }).catch((err)=>{
             console.log(err.message)

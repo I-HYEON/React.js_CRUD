@@ -4,7 +4,14 @@
       "id": 1,
       "name": "John",
       "email": "jh@in.com",
-      "phone":"01352642"
+      "phone": "01352642"
+    },
+    {
+      "name": "boradori",
+      "email": "bora@aaa.com",
+      "phone": "123456789",
+      "active": true,
+      "id": 2
     }
   ]
 }
