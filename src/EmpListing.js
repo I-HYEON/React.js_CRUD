@@ -1,8 +1,20 @@
 import {useEffect, useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const EmpListing = () => {
     const [empData, setEmpData] = useState(null)
+    const navigate = useNavigate()
+
+    const LoadDetail = (empid) => {
+        navigate('/employee/detail/'+empid)
+    }
+    const LoadEdit = (empid) => {
+        navigate('/employee/edit/'+empid)
+    }
+    const DeleteFunction = () => {
+        return
+    }
+
     useEffect(()=> {
         fetch("http://localhost:8000/employee").then((res)=>{
             return res.json();
@@ -41,9 +53,9 @@ const EmpListing = () => {
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
                                     <td>
-                                        <a className="btn btn-success">Edit</a>
-                                        <a className="btn btn-danger">Delete</a>
-                                        <a className="btn btn-primary">Detail</a>
+                                        <a onClick={()=>{LoadEdit(item.id)}} className="btn btn-success">Edit</a>
+                                        <a onClick={()=>{DeleteFunction(item.id)}} className="btn btn-danger">Delete</a>
+                                        <a onClick={()=>{LoadDetail(item.id)}} className="btn btn-primary">Detail</a>
                                     </td>
                                 </tr>
                             ))}
